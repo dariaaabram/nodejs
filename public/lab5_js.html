@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Лабораторная работа №5</title>
+	<script type="text/javascript">
+
+		let sex, status, age;
+
+		function getSex(elem){
+			sex = elem.value;
+			console.log(sex);
+		}
+		function getStatus(elem)
+		{
+			status=elem.value;
+			console.log(status);
+		}
+		function getAge(elem)
+		{
+			age=elem.value;
+			console.log(age);
+		}
+
+		function change(size)
+		{
+			if(document.getElementById("wid").checked == true)
+			{
+				document.getElementById("line").width=size;
+			}
+			if(document.getElementById("heig").checked == true)
+			{
+				document.getElementById("line").size=size;
+			}
+		}
+			function reset_line()
+			{
+				document.getElementById("line").width=1500;
+				document.getElementById("line").size=0;
+			}
+	
+	</script>
+	</head>
+	<body>
+		<form name="form1">
+			<p>Введите значение:</p>
+			<input type="text" size="5" value="" name="size"><br>
+			<input type="radio" name="button1" id="wid">Поменять ширину<br>
+			<input type="radio" name ="button2" id ="heig">Поменять высоту<br>
+			<input type="button" value= "Поменять" onclick="change(document.form1.size.value)" ><br>
+            <input type="reset" value="Отмена" onclick="reset_line()" >
+            <br> 
+		</form>
+		<hr id="line">
+		<form name="form2" >
+			<p>Укажите Ваш пол:</p>
+			<input type="radio" required onClick="getSex(this)" value="Женский" name="sex" >Женский<br>
+			<input type="radio" required onClick="getSex(this)" value="Мужской" name="sex">Мужской<br>
+			<input type="radio" required onClick="getSex(this)" value="Другое" name="sex">Другое<br>
+			<p>Введите Ваш возраст:</p>
+			<input type="number" name="age" required size="5" min="10" max="150" step="1" value="" oninput="getAge(this)"><br>
+			<p>Укажите Ваше семейное положение:</p>
+			<input type="radio" required value="Не замужем/не женат" name="status">Не замужем/не женат<br>
+			<input type="radio" required value="Разведён/разведена" name="status" >Разведён/разведена<br>
+			<input type="radio" required value="Замужем/женат" name="status">Замужем/женат<br>
+			<input type="radio" required value="Состою в гражданском браке" name="status">Состою в гражданском браке<br>
+			<input type="submit" >
+		</form>
+
+	</body>
+	</html>
